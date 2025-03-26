@@ -22,10 +22,9 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # parameters
-data_dir=""
-output_dir=""
+data_dir="/data"
+output_dir="/results"
 run_tag="test_run"
-local_batch_size=2
 
 python ./train.py \
        --wireup_method "dummy" \
@@ -34,16 +33,11 @@ python ./train.py \
        --output_dir ${output_dir} \
        --model_prefix "segmentation" \
        --optimizer "LAMB" \
-       --adam_eps 1e-6 \
        --start_lr 0.0055 \
        --lr_schedule type="multistep",milestones="800",decay_rate="0.1" \
        --lr_warmup_steps 400 \
        --lr_warmup_factor 1. \
        --weight_decay 1e-2 \
-       --logging_frequency 10 \
-       --save_frequency 0 \
-       --max_epochs 200 \
+       --max_epochs 1 \
        --max_inter_threads 4 \
-       --seed $(date +%s) \
-       --batchnorm_group_size 1 \
-       --local_batch_size ${local_batch_size}
+       --batchnorm_group_size 1

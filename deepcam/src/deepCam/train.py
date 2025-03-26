@@ -169,7 +169,7 @@ def main(pargs):
                   find_unused_parameters=False,
                   broadcast_buffers=False,
                   bucket_cap_mb=bucket_cap_mb,
-                  gradient_as_bucket_view=False)
+                  gradient_as_bucket_view=False) if dist.is_initialized() and dist.get_world_size() > 1 else net
 
     # get stats handler here
     bnstats_handler = bns.BatchNormStatsSynchronize(ddp_net, reduction = "mean", inplace = True)
