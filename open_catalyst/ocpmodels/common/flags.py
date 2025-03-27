@@ -35,7 +35,6 @@ class Flags:
         )
         self.parser.add_argument(
             "--identifier",
-            default="",
             type=str,
             help="Experiment identifier to append to checkpoint/log/result directory",
         )

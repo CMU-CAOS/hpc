@@ -1,0 +1,15 @@
+-f https://data.pyg.org/whl/torch-2.5.0+cu124.html
+ase
+lmdb
+mlperf-logging
+pyg-lib
+pymatgen
+submitit
+tensorboard
+torch~=2.5.0
+torch-geometric
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
+wandb
