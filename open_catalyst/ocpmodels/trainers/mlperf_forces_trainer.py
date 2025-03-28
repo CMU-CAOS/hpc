@@ -414,10 +414,10 @@ class MLPerfForcesTrainer(BaseTrainer):
                 opt_name = "AdamW"
             mllogger.event(key=mllog.constants.OPT_NAME, value=opt_name)
             mllogger.event(key=mllog.constants.OPT_BASE_LR, value=self.config["optim"]["lr_initial"])
-            mllogger.event(key=mllog.constants.OPT_LR_WARMUP_STEPS, value=self.config["optim"]["warmup_steps"])
-            mllogger.event(key=mllog.constants.OPT_LR_WARMUP_FACTOR, value=self.config["optim"]["warmup_factor"])
-            mllogger.event(key=mllog.constants.OPT_LR_DECAY_BOUNDARY_STEPS, value=self.config["optim"]["lr_milestones"])
-            mllogger.event(key=mllog.constants.OPT_LR_DECAY_FACTOR, value=self.config["optim"]["lr_gamma"])
+            # mllogger.event(key=mllog.constants.OPT_LR_WARMUP_STEPS, value=self.config["optim"]["warmup_steps"])
+            # mllogger.event(key=mllog.constants.OPT_LR_WARMUP_FACTOR, value=self.config["optim"]["warmup_factor"])
+            # mllogger.event(key=mllog.constants.OPT_LR_DECAY_BOUNDARY_STEPS, value=self.config["optim"]["lr_milestones"])
+            # mllogger.event(key=mllog.constants.OPT_LR_DECAY_FACTOR, value=self.config["optim"]["lr_gamma"])
 
             # Begin the mlperf run
             mllogger.end(key=mllog.constants.INIT_STOP)

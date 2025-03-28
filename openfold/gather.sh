@@ -6,7 +6,7 @@ for CUDA_MPS_ACTIVE_THREAD_PERCENTAGE in 13 25 38 50 63 75 88 100
 do
 	mkdir -p output/$CUDA_MPS_ACTIVE_THREAD_PERCENTAGE
 	docker run -itu`id -u` -eCUDA_MPS_ACTIVE_THREAD_PERCENTAGE \
-	    -v/data2/pcoppock/mlcommons/hpc/openfold:/data \
+	    -v$HOME/coppock-az:/data \
 	    -v$PWD/output/$CUDA_MPS_ACTIVE_THREAD_PERCENTAGE:/results \
 	    --rm --gpus=device=$DEVICE --ipc=host \
 	    --ulimit=memlock=-1 --ulimit=stack=67108864 \
