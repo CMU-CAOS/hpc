@@ -40,4 +40,5 @@ python ./train.py \
        --weight_decay 1e-2 \
        --max_epochs 1 \
        --max_inter_threads 4 \
-       --batchnorm_group_size 1
+       --batchnorm_group_size 1 \
+       "$@"
